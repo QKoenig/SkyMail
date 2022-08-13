@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PathCreation.Examples
 {
-    public class RailMeshCreator : PathSceneTool
+    public class RailMeshCreator : PathSceneTool 
     {
         [Header("Road settings")]
         public float roadWidth = .4f;
@@ -124,9 +124,6 @@ namespace PathCreation.Examples
             mesh.SetTriangles(underRoadTriangles, 1);
             mesh.SetTriangles(sideOfRoadTriangles, 2);
             mesh.RecalculateBounds();
-
-            MeshCollider collider = GetComponent<MeshCollider>();
-            collider.sharedMesh = meshFilter.sharedMesh;
         }
 
         // Add MeshRenderer and MeshFilter components to this gameobject if not already attached
