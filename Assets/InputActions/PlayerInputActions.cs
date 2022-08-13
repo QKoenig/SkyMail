@@ -71,6 +71,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slide"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8581013-68f4-40fc-a5f0-f9d57b767e52"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +181,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Swing"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b54096c-6b38-484d-9d9d-af0ee25d61d6"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Slide"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -185,6 +205,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_PlayerControl_Look = m_PlayerControl.FindAction("Look", throwIfNotFound: true);
         m_PlayerControl_Grapple = m_PlayerControl.FindAction("Grapple", throwIfNotFound: true);
         m_PlayerControl_Swing = m_PlayerControl.FindAction("Swing", throwIfNotFound: true);
+        m_PlayerControl_Slide = m_PlayerControl.FindAction("Slide", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +270,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControl_Look;
     private readonly InputAction m_PlayerControl_Grapple;
     private readonly InputAction m_PlayerControl_Swing;
+    private readonly InputAction m_PlayerControl_Slide;
     public struct PlayerControlActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -258,6 +280,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_PlayerControl_Look;
         public InputAction @Grapple => m_Wrapper.m_PlayerControl_Grapple;
         public InputAction @Swing => m_Wrapper.m_PlayerControl_Swing;
+        public InputAction @Slide => m_Wrapper.m_PlayerControl_Slide;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -282,6 +305,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Swing.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSwing;
                 @Swing.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSwing;
                 @Swing.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSwing;
+                @Slide.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSlide;
+                @Slide.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSlide;
+                @Slide.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSlide;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -301,6 +327,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Swing.started += instance.OnSwing;
                 @Swing.performed += instance.OnSwing;
                 @Swing.canceled += instance.OnSwing;
+                @Slide.started += instance.OnSlide;
+                @Slide.performed += instance.OnSlide;
+                @Slide.canceled += instance.OnSlide;
             }
         }
     }
@@ -312,5 +341,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnGrapple(InputAction.CallbackContext context);
         void OnSwing(InputAction.CallbackContext context);
+        void OnSlide(InputAction.CallbackContext context);
     }
 }

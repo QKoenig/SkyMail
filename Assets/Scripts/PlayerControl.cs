@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     public Collider playerCollider;
     public float jumpVelocity = 5f;
     public float acceleration = 1f;
+    public float slideAcceleration = 1f;
     public float runSpeed = 10f;
     public float maxVelocity = 100f;
 
@@ -28,6 +29,7 @@ public class PlayerControl : MonoBehaviour
     private float maxDistance = 100f;
 
     private bool isGrappling = false;
+    private bool isSliding = false;
 
     bool isGrounded;
 
@@ -39,6 +41,8 @@ public class PlayerControl : MonoBehaviour
 
     private Rigidbody rb;
     private GrapplingGun grapplingGun;
+
+    private float scaleVelocity;
 
     void Start()
     {
@@ -58,6 +62,8 @@ public class PlayerControl : MonoBehaviour
         playerInputActions.PlayerControl.Jump.performed += Jump;
         playerInputActions.PlayerControl.Grapple.performed += StartGrapple;
         playerInputActions.PlayerControl.Grapple.canceled += StopGrapple;
+        playerInputActions.PlayerControl.Slide.performed += StartSlide;
+        playerInputActions.PlayerControl.Slide.canceled += StopSlide;
     }
 
     private void OnEnable()
@@ -75,6 +81,11 @@ public class PlayerControl : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
+    }
+
     private void LateUpdate()
     {
         transform.rotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0);
@@ -89,15 +100,13 @@ public class PlayerControl : MonoBehaviour
         Vector2 inputVector = playerInputActions.PlayerControl.Movement.ReadValue<Vector2>();
         Vector3 move = transform.right * inputVector.x + transform.forward * inputVector.y;
 
-        if(rb.velocity.magnitude < runSpeed)
+        if (rb.velocity.magnitude < runSpeed ||  (rb.velocity + move * Time.fixedDeltaTime).magnitude < rb.velocity.magnitude)
         {
-            rb.AddForce(move * acceleration * Time.fixedDeltaTime);
+            rb.AddForce(move * (isSliding ? slideAcceleration : acceleration) * Time.fixedDeltaTime);
         }
 
-
-        if(isGrounded && !isGrappling && (inputVector.magnitude < .01 || rb.velocity.magnitude > runSpeed))
+        if(isGrounded && !isGrappling && !isSliding && (inputVector.magnitude < .01 || rb.velocity.magnitude > runSpeed))
         {
-
             rb.drag = 5;
         } else
         {
@@ -105,7 +114,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         //Gravity
-        rb.AddForce(gravity * Time.deltaTime, ForceMode.Acceleration);
+        rb.AddForce(gravity * Time.fixedDeltaTime, ForceMode.Acceleration);
 
         //Grapple
         if(isGrappling)
@@ -115,6 +124,15 @@ public class PlayerControl : MonoBehaviour
         if(rb.velocity.magnitude > maxVelocity)
         {
             rb.velocity = rb.velocity.normalized * maxVelocity;
+        }
+
+        //slide
+        if(isSliding)
+        {
+            transform.localScale = new Vector3(1, Mathf.SmoothDamp(transform.localScale.y, .2f, ref scaleVelocity, .1f), 1);
+        } else
+        {
+            transform.localScale = new Vector3(1, Mathf.SmoothDamp(transform.localScale.y, 1f, ref scaleVelocity, .1f), 1);
         }
     }
 
@@ -177,5 +195,14 @@ public class PlayerControl : MonoBehaviour
     public Vector3 GetGrapplePoint()
     {
         return grapplePoint;
+    }
+
+    public void StartSlide(InputAction.CallbackContext context)
+    {
+        isSliding = true;
+    }
+    public void StopSlide(InputAction.CallbackContext context)
+    {
+        isSliding = false;
     }
 }
