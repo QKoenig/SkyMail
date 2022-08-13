@@ -2,10 +2,8 @@
 using PathCreation.Utility;
 using UnityEngine;
 
-namespace PathCreation.Examples 
-{
-    public class RoadMeshCreator : PathSceneTool 
-    {
+namespace PathCreation.Examples {
+    public class RoadMeshCreator : PathSceneTool {
         [Header ("Road settings")]
         public float roadWidth = .4f;
         [Range (0, .5f)]
