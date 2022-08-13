@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
     public float grappleForce = 100;
     public LayerMask whatIsGrappleable;
     public Transform gunTip;
-    private float maxDistance = 100f;
+    public float grappleDistance = 200f;
 
     private bool isGrappling = false;
     private bool isSliding = false;
@@ -155,7 +155,7 @@ public class PlayerControl : MonoBehaviour
     void StartGrapple(InputAction.CallbackContext context)
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, maxDistance, whatIsGrappleable))
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, grappleDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
 
