@@ -10,7 +10,8 @@ public class Carriage : MonoBehaviour
     public Train train;
     public Carriage leadingCarriage;
     public float distanceTraveled;
-
+    public float followOffset = 3.2f;
+    public float carriageFollowOffset = 8;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +23,15 @@ public class Carriage : MonoBehaviour
     {
         if (train != null) 
         {
-            transform.position = pathCreator.path.GetPointAtDistance(train.distanceTraveled - train.transform.localScale.z / 2 - transform.localScale.z / 2 - 0.1f);
-            transform.rotation = pathCreator.path.GetRotationAtDistance(train.distanceTraveled - train.transform.localScale.z / 2 - transform.localScale.z / 2 - 0.1f);
+            transform.position = pathCreator.path.GetPointAtDistance(train.distanceTraveled - train.transform.localScale.z / 2 - transform.localScale.z / 2 - followOffset);
+            transform.rotation = pathCreator.path.GetRotationAtDistance(train.distanceTraveled - train.transform.localScale.z / 2 - transform.localScale.z / 2 - followOffset);
 
             distanceTraveled = train.distanceTraveled - train.transform.localScale.z / 2 - transform.localScale.z / 2 - 0.1f;
         }
         else
         {
-            transform.position = pathCreator.path.GetPointAtDistance(leadingCarriage.distanceTraveled - leadingCarriage.transform.localScale.z / 2 - transform.localScale.z / 2 - 0.1f);
-            transform.rotation = pathCreator.path.GetRotationAtDistance(leadingCarriage.distanceTraveled - leadingCarriage.transform.localScale.z / 2 - transform.localScale.z / 2 - 0.1f);
+            transform.position = pathCreator.path.GetPointAtDistance(leadingCarriage.distanceTraveled - leadingCarriage.transform.localScale.z / 2 - transform.localScale.z / 2 - carriageFollowOffset);
+            transform.rotation = pathCreator.path.GetRotationAtDistance(leadingCarriage.distanceTraveled - leadingCarriage.transform.localScale.z / 2 - transform.localScale.z / 2 - carriageFollowOffset);
 
             distanceTraveled = leadingCarriage.distanceTraveled - leadingCarriage.transform.localScale.z / 2 - transform.localScale.z / 2 - 0.1f;
         }
