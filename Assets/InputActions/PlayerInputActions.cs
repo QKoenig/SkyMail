@@ -80,6 +80,24 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""9787ed6c-abc0-4475-a921-ffdf2287e16f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeSelection"",
+                    ""type"": ""Value"",
+                    ""id"": ""8aa2ea6b-2201-497c-95eb-bdae5a453549"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -192,6 +210,50 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""Slide"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a96f8efb-48c6-4598-8b96-7fb89a0490ca"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""7b94aea8-abf7-42ef-9cf3-fd28a58f31ca"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSelection"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""c1e44798-a593-40a8-98ea-49247397d8b4"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""9f4efd76-62c2-45e9-882c-42a2b3dd47e4"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeSelection"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -206,6 +268,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_PlayerControl_Grapple = m_PlayerControl.FindAction("Grapple", throwIfNotFound: true);
         m_PlayerControl_Swing = m_PlayerControl.FindAction("Swing", throwIfNotFound: true);
         m_PlayerControl_Slide = m_PlayerControl.FindAction("Slide", throwIfNotFound: true);
+        m_PlayerControl_Throw = m_PlayerControl.FindAction("Throw", throwIfNotFound: true);
+        m_PlayerControl_ChangeSelection = m_PlayerControl.FindAction("ChangeSelection", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -271,6 +335,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControl_Grapple;
     private readonly InputAction m_PlayerControl_Swing;
     private readonly InputAction m_PlayerControl_Slide;
+    private readonly InputAction m_PlayerControl_Throw;
+    private readonly InputAction m_PlayerControl_ChangeSelection;
     public struct PlayerControlActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -281,6 +347,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Grapple => m_Wrapper.m_PlayerControl_Grapple;
         public InputAction @Swing => m_Wrapper.m_PlayerControl_Swing;
         public InputAction @Slide => m_Wrapper.m_PlayerControl_Slide;
+        public InputAction @Throw => m_Wrapper.m_PlayerControl_Throw;
+        public InputAction @ChangeSelection => m_Wrapper.m_PlayerControl_ChangeSelection;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +376,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Slide.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSlide;
                 @Slide.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSlide;
                 @Slide.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSlide;
+                @Throw.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnThrow;
+                @Throw.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnThrow;
+                @Throw.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnThrow;
+                @ChangeSelection.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnChangeSelection;
+                @ChangeSelection.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnChangeSelection;
+                @ChangeSelection.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnChangeSelection;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -330,6 +404,12 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @Slide.started += instance.OnSlide;
                 @Slide.performed += instance.OnSlide;
                 @Slide.canceled += instance.OnSlide;
+                @Throw.started += instance.OnThrow;
+                @Throw.performed += instance.OnThrow;
+                @Throw.canceled += instance.OnThrow;
+                @ChangeSelection.started += instance.OnChangeSelection;
+                @ChangeSelection.performed += instance.OnChangeSelection;
+                @ChangeSelection.canceled += instance.OnChangeSelection;
             }
         }
     }
@@ -342,5 +422,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnGrapple(InputAction.CallbackContext context);
         void OnSwing(InputAction.CallbackContext context);
         void OnSlide(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
+        void OnChangeSelection(InputAction.CallbackContext context);
     }
 }

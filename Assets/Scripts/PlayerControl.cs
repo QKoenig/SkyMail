@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//[RequireComponent(typeof(Rigidbody))]
-//[RequireComponent(typeof(GrapplingGun))]
+[RequireComponent(typeof(PackageHolder))]
 public class PlayerControl : MonoBehaviour
 {
     public Collider playerCollider;
@@ -14,6 +13,14 @@ public class PlayerControl : MonoBehaviour
     public float slideAcceleration = 1f;
     public float runSpeed = 10f;
     public float maxVelocity = 100f;
+
+    public float throwMinVel = 5f;
+    public float throwMaxVel = 10f;
+    public float throwChargeTime = 2f;
+    public float aimAdjustFactor = .3f;
+    public Transform throwPosition;
+    public int throwLineAccuracy = 10;
+    public GameObject throwPackage;
 
     public Vector3 gravity = new Vector3(0, -9.81f, 0);
 
@@ -30,9 +37,13 @@ public class PlayerControl : MonoBehaviour
 
     private bool isGrappling = false;
     private bool isSliding = false;
+    private bool isThrowing = false;
+
+    private float throwStartTime = 0f;
 
     bool isGrounded;
 
+    public Transform packageHoldPoint;
 
     private PlayerInputActions playerInputActions;
 
@@ -40,20 +51,25 @@ public class PlayerControl : MonoBehaviour
     private Transform cameraTransform;
 
     private Rigidbody rb;
-    private GrapplingGun grapplingGun;
 
     private float scaleVelocity;
+
+    private Vector3 throwVelocity;
+    private LineRenderer throwLine;
+    private List<Vector3> throwLinePoints = new List<Vector3>();
+    private PackageHolder packageHolder;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        grapplingGun = GetComponent<GrapplingGun>();
+        throwLine = throwPosition.GetComponent<LineRenderer>();
         cameraTransform = Camera.main.transform;
     }
 
     private void Awake()
     {
         lr = GetComponent<LineRenderer>();
+        packageHolder = GetComponent<PackageHolder>();
         lr.positionCount = 0;
 
         Cursor.lockState = CursorLockMode.Locked;
@@ -64,6 +80,9 @@ public class PlayerControl : MonoBehaviour
         playerInputActions.PlayerControl.Grapple.canceled += StopGrapple;
         playerInputActions.PlayerControl.Slide.performed += StartSlide;
         playerInputActions.PlayerControl.Slide.canceled += StopSlide;
+        playerInputActions.PlayerControl.Throw.performed += StartThrow;
+        playerInputActions.PlayerControl.Throw.canceled += StopThrow;
+        playerInputActions.PlayerControl.ChangeSelection.performed += ChangeSelection;
     }
 
     private void OnEnable()
@@ -79,6 +98,42 @@ public class PlayerControl : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if(isThrowing)
+        {
+            float chargePercent = Mathf.Clamp((Time.time - throwStartTime) / throwChargeTime, 0, 1);
+/*            RaycastHit hit;
+
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, grappleDistance, whatIsGrappleable))
+            {
+                //((hit.point + new Vector3(0, (hit.point - throwPosition.position).magnitude * aimAdjustFactor, 0)) - throwPosition.position).normalized
+                throwVelocity = (hit.point - throwPosition.position).normalized * ((chargePercent * (throwMaxVel - throwMinVel)) + throwMinVel);
+            } else
+            {
+                throwVelocity = cameraTransform.forward * ((chargePercent * (throwMaxVel - throwMinVel)) + throwMinVel);
+            }*/
+            throwVelocity = cameraTransform.forward * ((chargePercent * (throwMaxVel - throwMinVel)) + throwMinVel);
+
+            /*throwLinePoints.Clear();
+
+            for(int i = 0; i < throwLineAccuracy; i++)
+            {
+                float t = ((float)i/throwLineAccuracy) * 2f;
+                Vector3 position = new Vector3(
+                    throwPosition.position.x + (throwVelocity.x * t) - .5f * -Physics.gravity.x * t * t,
+                    throwPosition.position.y + (throwVelocity.y * t) - .5f * -Physics.gravity.y * t * t,
+                    throwPosition.position.z + (throwVelocity.z * t) - .5f * -Physics.gravity.z * t * t
+                ) ;
+
+                throwLinePoints.Add(position);
+            }
+
+            throwLine.positionCount = throwLinePoints.Count;
+            throwLine.SetPositions(throwLinePoints.ToArray());*/
+        } else
+        {
+            //throwLine.positionCount = 0;
+        }
     }
 
     private void OnDrawGizmos()
@@ -204,5 +259,29 @@ public class PlayerControl : MonoBehaviour
     public void StopSlide(InputAction.CallbackContext context)
     {
         isSliding = false;
+    }
+    public void StartThrow(InputAction.CallbackContext context)
+    {
+        isThrowing = true;
+        throwStartTime = Time.time;
+    }
+    public void StopThrow(InputAction.CallbackContext context)
+    {
+        isThrowing = false;
+        //GameObject package = Instantiate(throwPackage, throwPosition.position, throwPosition.rotation);
+        //package.GetComponent<Rigidbody>().velocity = throwVelocity;
+        packageHolder.LaunchCurrentPackage(throwVelocity + rb.velocity);
+    }
+    
+    public void ChangeSelection(InputAction.CallbackContext context)
+    {
+        float value = context.ReadValue<float>();
+        if (value < 0)
+        {
+            packageHolder.DecreaseSelection();
+        } else if(value > 0)
+        {
+            packageHolder.IncreaseSelection();
+        }
     }
 }
