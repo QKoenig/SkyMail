@@ -57,7 +57,7 @@ public class PackageManager : MonoBehaviour
     {
         if(creatorList.Count < 1)
         {
-            Debug.LogWarning("Cannot spawn package, no creators registered with manager.");
+            //Debug.LogWarning("Cannot spawn package, no creators registered with manager.");
             return;
         }
         float packageRate = (packageSpawnRate.Evaluate(packagesAvailable / MaxAvailablePackages) / 60) * spawnRateModifier; // convert curve rate to packages per minute
