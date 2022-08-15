@@ -1246,6 +1246,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2657879488749175191, guid: a831ba4c39a796541860a9ce46c23699,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657879488749175191, guid: a831ba4c39a796541860a9ce46c23699,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657879488749175191, guid: a831ba4c39a796541860a9ce46c23699,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657879488749175191, guid: a831ba4c39a796541860a9ce46c23699,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657879488749175191, guid: a831ba4c39a796541860a9ce46c23699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657879488749175191, guid: a831ba4c39a796541860a9ce46c23699,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 4783205205349253968, guid: a831ba4c39a796541860a9ce46c23699,
         type: 3}
       propertyPath: m_RootOrder
@@ -1300,16 +1330,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4783205205349253969, guid: a831ba4c39a796541860a9ce46c23699,
-        type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4783205205349253969, guid: a831ba4c39a796541860a9ce46c23699,
-        type: 3}
-      propertyPath: pathTime
-      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 4783205205349253969, guid: a831ba4c39a796541860a9ce46c23699,
         type: 3}

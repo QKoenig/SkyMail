@@ -36,6 +36,7 @@ public class Stop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        totalTimeForPath = path.totalTime;
         timeUntilNextStop -= Time.deltaTime;
     }
 

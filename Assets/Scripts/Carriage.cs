@@ -10,8 +10,8 @@ public class Carriage : MonoBehaviour
     public Train train;
     public Carriage leadingCarriage;
     public float distanceTraveled;
-    public float followOffset = 3.2f;
-    public float carriageFollowOffset = 8;
+    public float followOffset = 5f;
+    public float carriageFollowOffset = 10;
     // Start is called before the first frame update
     void Start()
     {
