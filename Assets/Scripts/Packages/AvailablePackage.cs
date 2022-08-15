@@ -32,6 +32,10 @@ public class AvailablePackage : MonoBehaviour
 
     private void Update()
     {
+        if(package.Mode == Package.PackageMode.Expired)
+        {
+            Destroy(gameObject);
+        }
         // update time
         if (package != null)
         {

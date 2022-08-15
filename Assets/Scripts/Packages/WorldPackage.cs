@@ -30,6 +30,10 @@ public class WorldPackage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(transform.position.y < -20)
+        {
+            Destroy(gameObject);
+        }
         // update time
         if (package != null)
         {
