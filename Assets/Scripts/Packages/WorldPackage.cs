@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(PackageTimeUpdator))]
 public class WorldPackage : MonoBehaviour
 {
     public float smallScale = .1f;
@@ -31,8 +30,21 @@ public class WorldPackage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // update time
+        if (package != null)
+        {
+            if (package.StartTime > 0)
+            {
+                package.TimeRemaining = package.TotalTime - (Time.time - package.StartTime);
+                if (package.TimeRemaining <= 0)
+                {
+                    package.Mode = Package.PackageMode.Expired;
+                }
+            }
+        }
+
+
         Vector3 vel = new Vector3(0, 0, 0);
-        Debug.Log(transform.localScale);
         transform.localScale = Vector3.SmoothDamp(transform.localScale, (inHand ? Vector3.one * smallScale : Vector3.one * largeScale), ref vel, .02f);
 
         if(Vector3.Distance(transform.position, package.Destination.transform.position) < package.Destination.acceptanceRadius)
@@ -85,6 +97,5 @@ public class WorldPackage : MonoBehaviour
     public void SetPackage(Package p)
     {
         package = p;
-        GetComponent<PackageTimeUpdator>().package = p;
     }
 }

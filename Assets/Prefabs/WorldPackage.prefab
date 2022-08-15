@@ -246,7 +246,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 593738221973967492}
-  - component: {fileID: 1412382823175553030}
   - component: {fileID: 5586522976055956724}
   m_Layer: 0
   m_Name: WorldPackage
@@ -273,18 +272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
---- !u!114 &1412382823175553030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5917922819005625844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8daebe91ae9f284e94759e4d375ea14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5586522976055956724
 MonoBehaviour:
   m_ObjectHideFlags: 0
