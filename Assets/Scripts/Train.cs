@@ -7,7 +7,7 @@ public class Train: MonoBehaviour
 {
     public GameObject pathCreatorObject;
     PathCreator pathCreator;
-    public float speed = 1;
+    public float speed = 15;
     float curSpeed;
     public float distanceTraveled;
     public int numCarriages = 1;
@@ -24,11 +24,27 @@ public class Train: MonoBehaviour
     bool isAccelerating = false;
     float accelerateLength = 0;
     float acceleratedDistance = 0;
+
+    List<Stop> stops = new List<Stop> ();
+
+    bool startTiming = false;
+    float startingStopPos = -1;
+    public float totalTime = 87.90213f;
     // Start is called before the first frame update
     void Start()
     {
-        curSpeed = speed;
         pathCreator = pathCreatorObject.GetComponent<PathCreator>();
+
+        foreach (Transform child in pathCreator.transform)
+        {
+            if (child.GetComponent<Stop>())
+            {
+                Stop stop = child.GetComponent<Stop>();
+                stops.Add(stop);
+            }
+        }
+
+        curSpeed = speed;
 
         GameObject firstCarriageGameObject = Instantiate(carriageGameObject);
         Carriage firstCarriage = firstCarriageGameObject.GetComponent<Carriage>();
@@ -48,24 +64,31 @@ public class Train: MonoBehaviour
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        if (startTiming)
+        {
+            totalTime += Time.deltaTime;
+        }
+    }
     void FixedUpdate()
     {
         if (isDecelerating)
         {
-            deceleratedDistance += Time.deltaTime + curSpeed;
+            deceleratedDistance += Time.deltaTime * curSpeed;
             curSpeed = speed * (1 - deceleratedDistance / decelerateLength);
-            curSpeed = Mathf.Max(curSpeed, 0.0001f);
+            curSpeed = Mathf.Max(curSpeed, 0.5f);
         }
         if (isAccelerating)
         {
-            acceleratedDistance += Time.deltaTime + curSpeed;
+            acceleratedDistance += Time.deltaTime * curSpeed;
             curSpeed = speed * (acceleratedDistance / accelerateLength);
             curSpeed = Mathf.Min(curSpeed, speed);
         }
 
         if (!isStopped)
         {           
-            distanceTraveled += Time.deltaTime + curSpeed;
+            distanceTraveled += Time.deltaTime * curSpeed;
             distanceTraveled %= pathCreator.path.length;
             transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled);
             transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTraveled);
@@ -77,7 +100,7 @@ public class Train: MonoBehaviour
                 isStopped = false;
 
                 isAccelerating = true;
-                acceleratedDistance = 0.0001f;
+                acceleratedDistance = 0.5f;
 
             }
             else
@@ -96,6 +119,17 @@ public class Train: MonoBehaviour
             isStopped = true;
             isDecelerating = false;
             timeStopped = 0;
+
+            if (startingStopPos == -1 && !startTiming)
+            {
+                startingStopPos = stop.positionOnPath;
+                startTiming = true;
+            }
+            else if (startingStopPos == stop.positionOnPath && startTiming)
+            {
+                startTiming = false;
+                print(totalTime);
+            }
         }
 
         if (other.tag == "Decelerate")
@@ -115,5 +149,12 @@ public class Train: MonoBehaviour
             isAccelerating = false;
             curSpeed = speed;
         }
+    }
+
+    class stopTimeTracker {
+        float timeUntilNext = -1;
+        float lastSeen = -1;
+        Stop stop;
+        float stopPos;
     }
 }

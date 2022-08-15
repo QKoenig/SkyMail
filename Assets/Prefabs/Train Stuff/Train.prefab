@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4783205205349253968}
   - component: {fileID: 4783205205349253969}
+  - component: {fileID: 1539202568}
+  - component: {fileID: 1539202567}
   m_Layer: 0
   m_Name: Train
   m_TagString: Untagged
@@ -46,11 +48,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCreatorObject: {fileID: 0}
-  speed: 0.35
+  speed: 5
   distanceTraveled: 0
   numCarriages: 2
   carriageGameObject: {fileID: 8827035848535040141, guid: 28c4fb347f67fc741b48fcdab71d7cde,
     type: 3}
+--- !u!54 &1539202568
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783205205349253970}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1539202567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783205205349253970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.11, z: 6.38}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4783205205200009931
 PrefabInstance:
   m_ObjectHideFlags: 0
