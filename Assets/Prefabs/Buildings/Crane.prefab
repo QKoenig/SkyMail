@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1869273993786492378}
   - component: {fileID: 3914313056707187777}
   - component: {fileID: 461250316760203788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5383606884474740661}
   - component: {fileID: 1568625980679910156}
   - component: {fileID: 3320699305294957339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 6413365654744741383}
   - component: {fileID: 4836671195890032954}
   - component: {fileID: 2100538434945252681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5561671958244890303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girders (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 8700095733583403562}
   - component: {fileID: 8594252524084479656}
   - component: {fileID: 1977573267519223121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 1344979033973800823}
   - component: {fileID: 5083437997092124772}
   - component: {fileID: 8817128636605406987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5046584429649254423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girders (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 6619290378586438224}
   - component: {fileID: 6987797776988945573}
   - component: {fileID: 8615996452618772336}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 7627876840255446307}
   - component: {fileID: 5756679206666505722}
   - component: {fileID: 2834231688062326991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 7858767840033096698}
   - component: {fileID: 212528888121921985}
   - component: {fileID: 3444778824607513201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 1745727626885270507}
   - component: {fileID: 1522444252057395902}
   - component: {fileID: 441190961381374427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 6197229723156859291}
   - component: {fileID: 1043399595620709353}
   - component: {fileID: 5910230938848579844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 1617472402392601233}
   - component: {fileID: 8652006965564990175}
   - component: {fileID: 6475493008468295698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 4344509397035137004}
   - component: {fileID: 4613400506905894173}
   - component: {fileID: 8229137801743503281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 6867068624909063477}
   - component: {fileID: 1492952929586652573}
   - component: {fileID: 6668886391478458616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1383,7 +1383,7 @@ GameObject:
   - component: {fileID: 215126498169713379}
   - component: {fileID: 1191539688521350}
   - component: {fileID: 9172589538476180993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1480,7 +1480,7 @@ GameObject:
   - component: {fileID: 1597676537492464547}
   - component: {fileID: 9001155600862504926}
   - component: {fileID: 4021610012513266217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1577,7 +1577,7 @@ GameObject:
   - component: {fileID: 3416878187544323183}
   - component: {fileID: 4853059925918136568}
   - component: {fileID: 2655771693745015191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1674,7 +1674,7 @@ GameObject:
   - component: {fileID: 3972098169099855052}
   - component: {fileID: 955170533588776792}
   - component: {fileID: 303049018844997123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1768,7 +1768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7791939869003220621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girders (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1826,7 +1826,7 @@ GameObject:
   - component: {fileID: 3176782186471612946}
   - component: {fileID: 3144628099113552119}
   - component: {fileID: 3437848585048106995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1923,7 +1923,7 @@ GameObject:
   - component: {fileID: 484873263015949662}
   - component: {fileID: 3506893934156235162}
   - component: {fileID: 6058982724507556737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2020,7 @@ GameObject:
   - component: {fileID: 5082023043952381137}
   - component: {fileID: 5076921346384427243}
   - component: {fileID: 5053634865519118660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2117,7 +2117,7 @@ GameObject:
   - component: {fileID: 8564126751534509304}
   - component: {fileID: 2764070255809447261}
   - component: {fileID: 1624473541690310118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 4166356402498495165}
   - component: {fileID: 7804113580646044037}
   - component: {fileID: 8854492467530595680}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2311,7 +2311,7 @@ GameObject:
   - component: {fileID: 6592191317992254022}
   - component: {fileID: 9117807809849655646}
   - component: {fileID: 4758930931888821661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2408,7 +2408,7 @@ GameObject:
   - component: {fileID: 1578979146732482599}
   - component: {fileID: 1578979146732482648}
   - component: {fileID: 1578979146732482649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cabin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2502,7 +2502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1578979146772878431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2543,7 +2543,7 @@ GameObject:
   - component: {fileID: 1578979146920208747}
   - component: {fileID: 1578979146920208748}
   - component: {fileID: 1578979146920208749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2640,7 +2640,7 @@ GameObject:
   - component: {fileID: 1578979147105259650}
   - component: {fileID: 1578979147105259651}
   - component: {fileID: 1578979147105259652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ GameObject:
   - component: {fileID: 1578979147893619861}
   - component: {fileID: 1578979147893619862}
   - component: {fileID: 1578979147893619863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2836,7 +2836,7 @@ GameObject:
   - component: {fileID: 1578979148009766370}
   - component: {fileID: 1578979148009766371}
   - component: {fileID: 1578979148009766372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2934,7 +2934,7 @@ GameObject:
   - component: {fileID: 1578979148139301438}
   - component: {fileID: 1578979148139301439}
   - component: {fileID: 1578979148139301424}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Counter Weight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3031,7 +3031,7 @@ GameObject:
   - component: {fileID: 1578979148254106188}
   - component: {fileID: 1578979148254106189}
   - component: {fileID: 1578979148254106190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3129,7 +3129,7 @@ GameObject:
   - component: {fileID: 1578979148399074403}
   - component: {fileID: 1578979148399074404}
   - component: {fileID: 1578979148399074405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3227,7 +3227,7 @@ GameObject:
   - component: {fileID: 1780179065198159953}
   - component: {fileID: 3295697694643805801}
   - component: {fileID: 6894963834957404512}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3324,7 +3324,7 @@ GameObject:
   - component: {fileID: 7915780114987205553}
   - component: {fileID: 9083798709501416623}
   - component: {fileID: 1104111958088005022}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3421,7 +3421,7 @@ GameObject:
   - component: {fileID: 8412422536673570640}
   - component: {fileID: 8382163083841537696}
   - component: {fileID: 7664839071338943813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3518,7 +3518,7 @@ GameObject:
   - component: {fileID: 7138733799964509069}
   - component: {fileID: 7455630171751363589}
   - component: {fileID: 4314259890699754985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3615,7 +3615,7 @@ GameObject:
   - component: {fileID: 6090846480181576671}
   - component: {fileID: 534362862202032194}
   - component: {fileID: 2761557407318380813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3712,7 +3712,7 @@ GameObject:
   - component: {fileID: 4648708409913357673}
   - component: {fileID: 1472434135032532127}
   - component: {fileID: 6192145272080267791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3809,7 +3809,7 @@ GameObject:
   - component: {fileID: 936207164798560826}
   - component: {fileID: 8581633189737174470}
   - component: {fileID: 4228823273367356158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3906,7 @@ GameObject:
   - component: {fileID: 2455233638036036715}
   - component: {fileID: 8700336394406351259}
   - component: {fileID: 7889864439635620176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4003,7 +4003,7 @@ GameObject:
   - component: {fileID: 4755025887733299261}
   - component: {fileID: 1142211563778577250}
   - component: {fileID: 5887593396135282771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4100,7 +4100,7 @@ GameObject:
   - component: {fileID: 6920232829030905259}
   - component: {fileID: 2907121266674216647}
   - component: {fileID: 8299782897089441862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4197,7 +4197,7 @@ GameObject:
   - component: {fileID: 6473056146248612463}
   - component: {fileID: 3398363047272612784}
   - component: {fileID: 4056987294510650528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4294,7 +4294,7 @@ GameObject:
   - component: {fileID: 2070610260181560296}
   - component: {fileID: 8190443974635367332}
   - component: {fileID: 9088660990107461812}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4391,7 +4391,7 @@ GameObject:
   - component: {fileID: 356341283688376199}
   - component: {fileID: 4512785883327905421}
   - component: {fileID: 345765082399413684}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4488,7 +4488,7 @@ GameObject:
   - component: {fileID: 8750615460514494176}
   - component: {fileID: 6941668696577326680}
   - component: {fileID: 3585847837733271493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4585,7 +4585,7 @@ GameObject:
   - component: {fileID: 2069605173547516207}
   - component: {fileID: 3474528644332587676}
   - component: {fileID: 1315523552431935386}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4682,7 +4682,7 @@ GameObject:
   - component: {fileID: 7784377737721448687}
   - component: {fileID: 3738491444661011137}
   - component: {fileID: 7427917951150402447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4779,7 +4779,7 @@ GameObject:
   - component: {fileID: 8266964606457994646}
   - component: {fileID: 7827133331263493909}
   - component: {fileID: 3784102167344150723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4876,7 +4876,7 @@ GameObject:
   - component: {fileID: 116122726600552782}
   - component: {fileID: 5876876849539500869}
   - component: {fileID: 351036076025452176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4973,7 +4973,7 @@ GameObject:
   - component: {fileID: 3210876563060620660}
   - component: {fileID: 6833256048046416376}
   - component: {fileID: 5841928695977826638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5068,7 +5068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8317810192477156076}
   - component: {fileID: 8317810192477156075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Crane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5128,7 +5128,7 @@ GameObject:
   - component: {fileID: 3490906564200328741}
   - component: {fileID: 2950857826740334724}
   - component: {fileID: 7825151347522080311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5225,7 +5225,7 @@ GameObject:
   - component: {fileID: 1628755012792922942}
   - component: {fileID: 8493964863498183465}
   - component: {fileID: 8748120371727261702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5322,7 +5322,7 @@ GameObject:
   - component: {fileID: 3798487390369990743}
   - component: {fileID: 9101557675390822221}
   - component: {fileID: 4582536711006459000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5419,7 +5419,7 @@ GameObject:
   - component: {fileID: 2881492608260402078}
   - component: {fileID: 1765280882583674339}
   - component: {fileID: 4375974139647270830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5516,7 +5516,7 @@ GameObject:
   - component: {fileID: 2543798682362518017}
   - component: {fileID: 6828157549525859874}
   - component: {fileID: 2141222425917335713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5613,7 +5613,7 @@ GameObject:
   - component: {fileID: 4212694403957348017}
   - component: {fileID: 8584012359034595697}
   - component: {fileID: 5376574627984422760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5710,7 +5710,7 @@ GameObject:
   - component: {fileID: 3365029464383355133}
   - component: {fileID: 596185913453369895}
   - component: {fileID: 2510795888286770767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5807,7 +5807,7 @@ GameObject:
   - component: {fileID: 708685018096361345}
   - component: {fileID: 2424617289270243902}
   - component: {fileID: 6380339524314857038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5904,7 +5904,7 @@ GameObject:
   - component: {fileID: 3941087710835736391}
   - component: {fileID: 8054017248694044564}
   - component: {fileID: 6194104479085350909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6001,7 +6001,7 @@ GameObject:
   - component: {fileID: 5386354518872514528}
   - component: {fileID: 1267900399766169274}
   - component: {fileID: 974266314260861045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6098,7 +6098,7 @@ GameObject:
   - component: {fileID: 9152447196024012969}
   - component: {fileID: 2098818775017510002}
   - component: {fileID: 9184735265796848247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6195,7 +6195,7 @@ GameObject:
   - component: {fileID: 7142198685117079736}
   - component: {fileID: 1650323323796561801}
   - component: {fileID: 5284882309502150192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6292,7 +6292,7 @@ GameObject:
   - component: {fileID: 7752031486051884497}
   - component: {fileID: 3871531400274663612}
   - component: {fileID: 8703380369741099647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6389,7 +6389,7 @@ GameObject:
   - component: {fileID: 6346680801707667685}
   - component: {fileID: 6207385120558443948}
   - component: {fileID: 3275243461407413559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6486,7 +6486,7 @@ GameObject:
   - component: {fileID: 8015205190433070520}
   - component: {fileID: 5601728002176298126}
   - component: {fileID: 902198679115598889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6583,7 +6583,7 @@ GameObject:
   - component: {fileID: 2233998131045735939}
   - component: {fileID: 1164802195268242260}
   - component: {fileID: 3447470331253309832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6680,7 +6680,7 @@ GameObject:
   - component: {fileID: 3693098678466520901}
   - component: {fileID: 9095893793681186204}
   - component: {fileID: 5520319284540263306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6777,7 +6777,7 @@ GameObject:
   - component: {fileID: 4064820954795172288}
   - component: {fileID: 6254088633874212487}
   - component: {fileID: 728301912532758830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6874,7 +6874,7 @@ GameObject:
   - component: {fileID: 2018247289923376566}
   - component: {fileID: 8358488481569453531}
   - component: {fileID: 4749970993616257578}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6971,7 +6971,7 @@ GameObject:
   - component: {fileID: 3712107829978588963}
   - component: {fileID: 7014135314336115947}
   - component: {fileID: 1596731165120865254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7068,7 +7068,7 @@ GameObject:
   - component: {fileID: 6886856469686063082}
   - component: {fileID: 833344455991041552}
   - component: {fileID: 4127260925927096091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7165,7 +7165,7 @@ GameObject:
   - component: {fileID: 6905283308485696344}
   - component: {fileID: 1388422595761682831}
   - component: {fileID: 3609161890517562216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7262,7 +7262,7 @@ GameObject:
   - component: {fileID: 8802049308611632944}
   - component: {fileID: 7957583380383938747}
   - component: {fileID: 5562316381146588921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7359,7 +7359,7 @@ GameObject:
   - component: {fileID: 6813127981156649067}
   - component: {fileID: 7363788331411870694}
   - component: {fileID: 3798584567495920787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7456,7 +7456,7 @@ GameObject:
   - component: {fileID: 4544212840509949723}
   - component: {fileID: 2161423412688040292}
   - component: {fileID: 3697493643726176889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7553,7 +7553,7 @@ GameObject:
   - component: {fileID: 6746081494170206983}
   - component: {fileID: 5071170093443998704}
   - component: {fileID: 2955949725640803574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7650,7 +7650,7 @@ GameObject:
   - component: {fileID: 7002349943664790896}
   - component: {fileID: 6819856382635567949}
   - component: {fileID: 6161261970984115940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7747,7 +7747,7 @@ GameObject:
   - component: {fileID: 8291976252241048080}
   - component: {fileID: 4913485863479282946}
   - component: {fileID: 3064433984697546940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7844,7 +7844,7 @@ GameObject:
   - component: {fileID: 6986049038097311699}
   - component: {fileID: 7864730743749728733}
   - component: {fileID: 3241762692941343418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7941,7 +7941,7 @@ GameObject:
   - component: {fileID: 2541343962852527485}
   - component: {fileID: 3188921357051022029}
   - component: {fileID: 8498305407560417135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8038,7 +8038,7 @@ GameObject:
   - component: {fileID: 853556356955334722}
   - component: {fileID: 2535883944492425722}
   - component: {fileID: 2579186312437741437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8135,7 +8135,7 @@ GameObject:
   - component: {fileID: 8370312135248484883}
   - component: {fileID: 2709392932556182429}
   - component: {fileID: 4016694823351472696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8232,7 +8232,7 @@ GameObject:
   - component: {fileID: 6405371721580897103}
   - component: {fileID: 8290359882722581379}
   - component: {fileID: 728642834531491244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8329,7 +8329,7 @@ GameObject:
   - component: {fileID: 3942931657978070986}
   - component: {fileID: 8486877012452302787}
   - component: {fileID: 8177050684068265792}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8426,7 +8426,7 @@ GameObject:
   - component: {fileID: 4246372958999154180}
   - component: {fileID: 4770949296050013972}
   - component: {fileID: 6283872919651216795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8523,7 +8523,7 @@ GameObject:
   - component: {fileID: 8700712819293886407}
   - component: {fileID: 7436950226856843049}
   - component: {fileID: 5279779039163657383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8620,7 +8620,7 @@ GameObject:
   - component: {fileID: 5703658005008973993}
   - component: {fileID: 7932632635517870957}
   - component: {fileID: 9050583732255305814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8717,7 +8717,7 @@ GameObject:
   - component: {fileID: 7516138768786799555}
   - component: {fileID: 1555623487613794212}
   - component: {fileID: 1649307585869636553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8814,7 +8814,7 @@ GameObject:
   - component: {fileID: 1234303530501277485}
   - component: {fileID: 6657841998848156638}
   - component: {fileID: 356587364134984442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8911,7 +8911,7 @@ GameObject:
   - component: {fileID: 6595363805876329721}
   - component: {fileID: 2656023224549425907}
   - component: {fileID: 7087154807766231214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9008,7 +9008,7 @@ GameObject:
   - component: {fileID: 4824169873262505619}
   - component: {fileID: 1635489455317563593}
   - component: {fileID: 3121998519182162404}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9105,7 +9105,7 @@ GameObject:
   - component: {fileID: 596764988661812456}
   - component: {fileID: 2666089624363548280}
   - component: {fileID: 7085291350984555176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9202,7 +9202,7 @@ GameObject:
   - component: {fileID: 316482435281965904}
   - component: {fileID: 6963260920371649520}
   - component: {fileID: 5722978773499180870}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9299,7 +9299,7 @@ GameObject:
   - component: {fileID: 2293299662093687483}
   - component: {fileID: 1341628507598159309}
   - component: {fileID: 2237878457455250550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9393,7 +9393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7193049580269522699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9451,7 +9451,7 @@ GameObject:
   - component: {fileID: 5410112557950167470}
   - component: {fileID: 1619313314746825603}
   - component: {fileID: 6494040274657364794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9548,7 +9548,7 @@ GameObject:
   - component: {fileID: 6025680841459229818}
   - component: {fileID: 2733855578388418023}
   - component: {fileID: 4238738188653728911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9645,7 +9645,7 @@ GameObject:
   - component: {fileID: 2456657228030102329}
   - component: {fileID: 465583946333031007}
   - component: {fileID: 1615378550124842811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9742,7 +9742,7 @@ GameObject:
   - component: {fileID: 8885025464610384854}
   - component: {fileID: 789513206131109022}
   - component: {fileID: 928782551838051497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9839,7 +9839,7 @@ GameObject:
   - component: {fileID: 3651476517219499284}
   - component: {fileID: 6532600606766603994}
   - component: {fileID: 4239842832755114099}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9936,7 +9936,7 @@ GameObject:
   - component: {fileID: 1679214807427099865}
   - component: {fileID: 2234842759978188103}
   - component: {fileID: 5801640252170260936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10033,7 +10033,7 @@ GameObject:
   - component: {fileID: 365914949471109540}
   - component: {fileID: 8807957746034992990}
   - component: {fileID: 4593336949567407003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10130,7 +10130,7 @@ GameObject:
   - component: {fileID: 2061979141723527228}
   - component: {fileID: 65624509539281496}
   - component: {fileID: 6339471213980311095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10227,7 +10227,7 @@ GameObject:
   - component: {fileID: 1350248942546218841}
   - component: {fileID: 4395279145279500893}
   - component: {fileID: 8754565446053984325}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10324,7 +10324,7 @@ GameObject:
   - component: {fileID: 5243445717943684842}
   - component: {fileID: 1906230006557293950}
   - component: {fileID: 7412065145701845858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10421,7 +10421,7 @@ GameObject:
   - component: {fileID: 1285191420591751915}
   - component: {fileID: 3712013413724560004}
   - component: {fileID: 900221005107456565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10518,7 +10518,7 @@ GameObject:
   - component: {fileID: 5430619706722567402}
   - component: {fileID: 2943292656200481210}
   - component: {fileID: 6201848788464938710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10615,7 +10615,7 @@ GameObject:
   - component: {fileID: 2540671262741092341}
   - component: {fileID: 3593008308272273828}
   - component: {fileID: 5519518372279789785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10712,7 +10712,7 @@ GameObject:
   - component: {fileID: 4970652492562850382}
   - component: {fileID: 2629417097307512466}
   - component: {fileID: 4721407890710218093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Girder2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
