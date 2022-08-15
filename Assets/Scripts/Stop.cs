@@ -18,16 +18,26 @@ public class Stop : MonoBehaviour
     public Transform accelerate;
 
     public float stopTime = 10;
+
+    public float timeToFirstStop = -1;
+    public float timeUntilNextStop = -1;
+    public float totalTimeForPath;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (timeToFirstStop != -1)
+        {
+            timeUntilNextStop = timeToFirstStop;
+        }
+
+        totalTimeForPath = path.totalTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        totalTimeForPath = path.totalTime;
+        timeUntilNextStop -= Time.deltaTime;
     }
 
     private void OnDrawGizmos()
@@ -54,5 +64,11 @@ public class Stop : MonoBehaviour
 
             accelerate.position = path.path.GetPointAtTime(positionOnPath + accelerateLength);
         }
+    }
+
+    public void resetTimer()
+    {
+        totalTimeForPath = path.totalTime;
+        timeUntilNextStop = totalTimeForPath;
     }
 }

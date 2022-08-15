@@ -9,7 +9,7 @@ public class Train: MonoBehaviour
     PathCreator pathCreator;
     public float speed = 15;
     float curSpeed;
-    public float distanceTraveled;
+    public float distanceTraveled = 0;
     public int numCarriages = 1;
     public GameObject carriageGameObject;
 
@@ -25,25 +25,16 @@ public class Train: MonoBehaviour
     float accelerateLength = 0;
     float acceleratedDistance = 0;
 
-    List<Stop> stops = new List<Stop> ();
-
-    bool startTiming = false;
-    float startingStopPos = -1;
-    public float totalTime = 87.90213f;
+    bool startTiming = true;
+    float totalTime;
+    public float pathTime;
     // Start is called before the first frame update
     void Start()
     {
         pathCreator = pathCreatorObject.GetComponent<PathCreator>();
+        pathCreator.totalTime = pathTime;
 
-        foreach (Transform child in pathCreator.transform)
-        {
-            if (child.GetComponent<Stop>())
-            {
-                Stop stop = child.GetComponent<Stop>();
-                stops.Add(stop);
-            }
-        }
-
+        totalTime = 0;
         curSpeed = speed;
 
         GameObject firstCarriageGameObject = Instantiate(carriageGameObject);
@@ -89,6 +80,12 @@ public class Train: MonoBehaviour
         if (!isStopped)
         {           
             distanceTraveled += Time.deltaTime * curSpeed;
+            if (distanceTraveled >= pathCreator.path.length && startTiming)
+            {
+                startTiming = false;
+                print(string.Format("Total time: {0}", totalTime));
+            }
+
             distanceTraveled %= pathCreator.path.length;
             transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled);
             transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTraveled);
@@ -119,16 +116,9 @@ public class Train: MonoBehaviour
             isStopped = true;
             isDecelerating = false;
             timeStopped = 0;
-
-            if (startingStopPos == -1 && !startTiming)
-            {
-                startingStopPos = stop.positionOnPath;
-                startTiming = true;
-            }
-            else if (startingStopPos == stop.positionOnPath && startTiming)
-            {
-                startTiming = false;
-                print(totalTime);
+            stop.resetTimer();
+            if (startTiming) { 
+                print(string.Format("Stop {0} with time {1}", stop.positionOnPath, totalTime));
             }
         }
 
@@ -149,12 +139,5 @@ public class Train: MonoBehaviour
             isAccelerating = false;
             curSpeed = speed;
         }
-    }
-
-    class stopTimeTracker {
-        float timeUntilNext = -1;
-        float lastSeen = -1;
-        Stop stop;
-        float stopPos;
     }
 }
