@@ -59,6 +59,8 @@ public class PlayerControl : MonoBehaviour
     private List<Vector3> throwLinePoints = new List<Vector3>();
     private PackageHolder packageHolder;
 
+    GameObject movingGrappledObject;
+    Vector3 grappleOffset;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -149,6 +151,10 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (movingGrappledObject != null)
+        {
+            grapplePoint = movingGrappledObject.transform.TransformPoint(grappleOffset);
+        }
 
         //Rotate with camera
 
@@ -214,6 +220,9 @@ public class PlayerControl : MonoBehaviour
         {
             grapplePoint = hit.point;
 
+            movingGrappledObject = hit.collider.gameObject;
+            grappleOffset = movingGrappledObject.transform.InverseTransformPoint(grapplePoint);
+
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
             isGrappling = true;
@@ -226,6 +235,7 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     void StopGrapple(InputAction.CallbackContext context)
     {
+        movingGrappledObject = null;
         lr.positionCount = 0;
         isGrappling = false;
     }
