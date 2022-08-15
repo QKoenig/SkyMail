@@ -105,4 +105,13 @@ public class PackageHolder : MonoBehaviour
     {
         return packageObjects.Count < maxPackages;
     }
+
+    public void ClearPackages()
+    {
+        for(int i = packageObjects.Count - 1; i >= 0; i--)
+        {
+            Destroy(packageObjects[i].gameObject);
+            RemovePackage(i);
+        }
+    }
 }

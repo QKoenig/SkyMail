@@ -59,6 +59,9 @@ public class PlayerControl : MonoBehaviour
     private List<Vector3> throwLinePoints = new List<Vector3>();
     private PackageHolder packageHolder;
 
+    public float respawnLevel = 1f;//135f;
+    private List<RespawnPoint> respawnPoints;
+
     GameObject movingGrappledObject;
     Vector3 grappleOffset;
     void Start()
@@ -73,6 +76,8 @@ public class PlayerControl : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         packageHolder = GetComponent<PackageHolder>();
         lr.positionCount = 0;
+
+        respawnPoints = new List<RespawnPoint>(FindObjectsOfType<RespawnPoint>());
 
         Cursor.lockState = CursorLockMode.Locked;
         playerInputActions = new PlayerInputActions();
@@ -99,6 +104,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        if(transform.position.y < respawnLevel)
+        {
+            Respawn();
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isThrowing)
@@ -138,6 +148,25 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    private void Respawn()
+    {
+        RespawnPoint rp = null;
+        foreach(RespawnPoint r in respawnPoints)
+        {
+            if(rp == null || Vector3.Distance(r.transform.position, transform.position) < Vector3.Distance(rp.transform.position, transform.position))
+            {
+                rp = r;
+            }
+        }
+        if(rp != null)
+        {
+            rb.MovePosition(rp.transform.position);
+        } else
+        {
+            Debug.LogWarning("No respawn point found");
+        }
+        packageHolder.ClearPackages();
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundDistance);
@@ -215,6 +244,12 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     void StartGrapple(InputAction.CallbackContext context)
     {
+        List<AudioListener> listeners = new List<AudioListener>(FindObjectsOfType<AudioListener>());
+        foreach(AudioListener listener in listeners)
+        {
+            Debug.Log(listener);
+        }
+
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, grappleDistance, whatIsGrappleable))
         {

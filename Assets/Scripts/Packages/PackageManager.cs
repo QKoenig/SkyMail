@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PackageManager : MonoBehaviour
 {
+    public TextMeshProUGUI packagesPerHour;
+    public TextMeshProUGUI totalPackages;
+
     public static PackageManager Instance { get; private set; }
     private void Awake()
     {
@@ -37,6 +41,11 @@ public class PackageManager : MonoBehaviour
     private int packagesDelivered = 0;
 
     private List<Package> packages = new List<Package>();
+
+    private float lastDeliveryTime = 0;
+    private List<float> deliveryTimes = new List<float>();
+
+    private float movingAverage = 0;
 
     // Update is called once per frame
     void Update()
@@ -85,7 +94,26 @@ public class PackageManager : MonoBehaviour
     public void PackageDelivered(Package p)
     {
         packagesInTransit--;
-        packagesDelivered++;
+        if(p.Mode != Package.PackageMode.Expired)
+        {
+            packagesDelivered++;
+            float delTime = Time.time - lastDeliveryTime;
+            deliveryTimes.Add(delTime);
+            if(deliveryTimes.Count > 10)
+            {
+                deliveryTimes.RemoveAt(0);
+            }
+            float totalTime = 0;
+            foreach(float t in deliveryTimes)
+            {
+                totalTime += t;
+            }
+            movingAverage = (deliveryTimes.Count / totalTime) * 60 * 60; // deliveries / hour
+            lastDeliveryTime = Time.time;
+
+            packagesPerHour.text = string.Format("Packages / hour: <mspace=mspace=16>{0,3}</mspace>", ((int)Mathf.Round(movingAverage)).ToString("D3"));
+            totalPackages.text = string.Format("Total Packages: <mspace=mspace=14>{0,4}</mspace>", packagesDelivered.ToString("D4"));
+        }
     }
 
     public void PackageDestroyed(Package p)
