@@ -26,6 +26,7 @@ public class PackageHolder : MonoBehaviour
         {
             selected = packageObjects.Count-1;
         }
+
         selected = Mathf.Max(0, selected);
 
         Vector3 selectorVel = new Vector3();
@@ -36,10 +37,15 @@ public class PackageHolder : MonoBehaviour
             Vector3.SmoothDamp(packageSelector.transform.localPosition, boxStartOffset + selectorStartOffset + new Vector3(packageObjects.Count == 0 ? -.5f : 0, distanceBetweenBoxes * selected, 0) + -(finalVel) * (((float)selected + 1f) / (maxPackages + 1)) * speedEffect, ref selectorVel, .03f);
         for (int i = 0; i < packageObjects.Count; i++)
         {
+            packageObjects[selected].package.Destination.SetMarkerEnabled(false);
+
+            Debug.Log(packageObjects[selected].package.Destination.marker);
             WorldPackage pO = packageObjects[i];
             Vector3 boxVel = new Vector3();
             pO.transform.localPosition = Vector3.SmoothDamp(pO.transform.localPosition, boxStartOffset + new Vector3(0, distanceBetweenBoxes * i, 0) + -(finalVel)*(((float)i+1f)/(maxPackages+1))*speedEffect, ref boxVel, .03f);
         }
+        packageObjects[selected].package.Destination.SetMarkerEnabled(true);
+
     }
 
 
@@ -74,7 +80,7 @@ public class PackageHolder : MonoBehaviour
         {   
             return;
         }
-        selected ++;
+        selected++;
     }
 
     public void DecreaseSelection()
@@ -83,7 +89,7 @@ public class PackageHolder : MonoBehaviour
         {
             return;
         }
-        selected --;
+        selected--;
     }
 
     public void AddPackage(Package p)

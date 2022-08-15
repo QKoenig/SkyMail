@@ -23,6 +23,10 @@ public class CompasManager : MonoBehaviour
     {
         foreach(CompassMarker marker in compassMarkers)
         {
+            if(marker ==  null)
+            {
+                continue;
+            }
             if(marker.enabled)
             {
                 marker.image.rectTransform.anchoredPosition = GetPosOnCompass(marker);

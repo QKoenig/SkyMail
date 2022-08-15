@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275216245300905484}
-  - component: {fileID: 6816360992947041748}
   m_Layer: 6
   m_Name: PackageAcceptor
   m_TagString: Untagged
@@ -34,21 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6816360992947041748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275216245300905586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 664ec1c77aef06242834c5b544907363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: eccbd58674acc5a42abda4eecad116e8, type: 3}
-  image: {fileID: 0}
-  enabled: 0
 --- !u!1 &275216245726803086
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275216245726803087}
   - component: {fileID: 275216245726803080}
+  - component: {fileID: 538472528049076365}
   m_Layer: 6
   m_Name: Acceptor
   m_TagString: Untagged
@@ -94,6 +79,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptanceRadius: 2.62
+  marker: {fileID: 538472528049076365}
+--- !u!114 &538472528049076365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275216245726803086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664ec1c77aef06242834c5b544907363, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: eccbd58674acc5a42abda4eecad116e8, type: 3}
+  image: {fileID: 0}
+  enabled: 0
 --- !u!1001 &275216245971446342
 PrefabInstance:
   m_ObjectHideFlags: 0

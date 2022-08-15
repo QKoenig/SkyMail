@@ -11,7 +11,7 @@ public class WorldPackage : MonoBehaviour
     public TextMeshProUGUI text1;
     public TextMeshProUGUI text2;
 
-    private Package package;
+    public Package package;
 
     private PackageHolder packageHolder;
 
@@ -25,6 +25,7 @@ public class WorldPackage : MonoBehaviour
     {
         startRotation = transform.localRotation;
         packageHolder = FindObjectOfType<PackageHolder>();
+        GetComponent<CompassMarker>().enabled = false;
     }
 
     // Update is called once per frame
@@ -80,6 +81,7 @@ public class WorldPackage : MonoBehaviour
             // Remove package and tell it it's launched
             package.Mode = Package.PackageMode.Transit;
             packageHolder.ReturnPackage(this);
+            GetComponent<CompassMarker>().enabled = false;
             inHand = true;
             transform.localRotation = startRotation;
         }
@@ -96,10 +98,16 @@ public class WorldPackage : MonoBehaviour
         package.Mode = Package.PackageMode.Thrown;
         launchTime = Time.time;
         inHand = false;
+        GetComponent<CompassMarker>().enabled = true;
+        package.Destination.SetMarkerEnabled(false);
     }
 
     public void SetPackage(Package p)
     {
         package = p;
+    }
+    private void OnDestroy()
+    {
+        package.Destination.SetMarkerEnabled(false);
     }
 }

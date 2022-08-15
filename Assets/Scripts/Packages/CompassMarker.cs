@@ -18,4 +18,11 @@ public class CompassMarker : MonoBehaviour
     {
         get { return new Vector2(transform.position.x, transform.position.z); }
     }
+
+    void OnDestroy()
+    {
+        if(!(image == null)) {
+            Destroy(image.gameObject);
+        }
+    }
 }
