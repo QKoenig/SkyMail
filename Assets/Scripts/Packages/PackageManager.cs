@@ -9,20 +9,6 @@ public class PackageManager : MonoBehaviour
     public TextMeshProUGUI totalPackages;
 
     public static PackageManager Instance { get; private set; }
-    private void Awake()
-    {
-        // If there is an instance, and it's not me, delete myself.
-
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-            InvokeRepeating("AttemptPackageSpawn", 1f, 1.0f);
-        }
-    }
 
     public List<PackageCreator> creatorList = new List<PackageCreator>();
 
@@ -46,6 +32,21 @@ public class PackageManager : MonoBehaviour
     private List<float> deliveryTimes = new List<float>();
 
     private float movingAverage = 0;
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            InvokeRepeating("AttemptPackageSpawn", 1f, 1.0f);
+        }
+        creatorList = new List<PackageCreator>(FindObjectsOfType<PackageCreator>());
+    }
 
     // Update is called once per frame
     void Update()

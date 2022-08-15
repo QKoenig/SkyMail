@@ -39,12 +39,14 @@ public class PackageHolder : MonoBehaviour
         {
             packageObjects[selected].package.Destination.SetMarkerEnabled(false);
 
-            Debug.Log(packageObjects[selected].package.Destination.marker);
             WorldPackage pO = packageObjects[i];
             Vector3 boxVel = new Vector3();
             pO.transform.localPosition = Vector3.SmoothDamp(pO.transform.localPosition, boxStartOffset + new Vector3(0, distanceBetweenBoxes * i, 0) + -(finalVel)*(((float)i+1f)/(maxPackages+1))*speedEffect, ref boxVel, .03f);
         }
-        packageObjects[selected].package.Destination.SetMarkerEnabled(true);
+        if(packageObjects.Count > 0)
+        {
+            packageObjects[selected].package.Destination.SetMarkerEnabled(true);
+        }
 
     }
 

@@ -244,11 +244,6 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     void StartGrapple(InputAction.CallbackContext context)
     {
-        List<AudioListener> listeners = new List<AudioListener>(FindObjectsOfType<AudioListener>());
-        foreach(AudioListener listener in listeners)
-        {
-            Debug.Log(listener);
-        }
 
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f)), out hit, grappleDistance, whatIsGrappleable))
