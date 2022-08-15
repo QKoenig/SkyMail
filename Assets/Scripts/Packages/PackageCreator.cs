@@ -19,6 +19,7 @@ public class PackageCreator : MonoBehaviour
 
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         packageAcceptors = new List<PackageAcceptor>(FindObjectsOfType<PackageAcceptor>());
     }
 
